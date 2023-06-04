@@ -1,0 +1,104 @@
+body {
+    color:white;
+    background-color: rgb(7, 27, 88);
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 50px;
+    color: rgb(16, 161, 59);
+}
+
+.animation {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: translateY(150px) rotateX(70deg);
+}
+
+.moon {
+    margin: -52px auto 0 auto;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100px;
+    width: 100px;
+    border-radius: 150px;
+    background-color: rgb(225, 239, 223);
+    border: 2px solid rgb(215, 236, 213);
+    animation: moon-moving 5s linear infinite reverse;
+
+}
+
+.river {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    background-color: #3498db;
+    border: 5px solid #2980b9;
+    animation: river-moving 4s linear infinite;
+}
+
+.r2 {
+    animation-delay: 0.5s;
+}
+
+.r3 {
+    animation-delay: 1.5s;
+}
+
+.r4 {
+    animation-delay: 2.5s;
+}
+
+.r5 {
+    animation-delay: 3.5s;
+}
+@keyframes river-moving {
+    from{
+        height: 0px;
+        width: 0px;
+        border-radius: 0px;
+    }
+    to{
+        height: 100em;
+        width: 100em;
+        border-radius: 100em;
+        opacity: 0;
+        box-shadow: 0px 30px 50px 30px rgb(40, 128, 185, .5);
+    }
+}
+@keyframes moon-moving {
+    0% {
+        box-shadow: insert 100px 0px 0px 7px rgb(254, 225, 207), 0px 0px 25px 25px rgb(254, 225, 207, .2), 0px 0px 50px 50px rgb(254, 225, 207, .15);
+
+    }
+    100% {
+        box-shadow: insert -100px 0px 0px 7px rgb(254, 225, 207), 0px 0px 25px 25px rgb(254, 225, 207, .2), 0px 0px 50px 50px rgb(254, 225, 207, .15);
+    }
+}
+@media only screen and (max-width: 600px){
+    @keyframes river-moving {
+        from{
+            height: 0px;
+            width: 0px;
+            border-radius: 100%;
+        }
+        to {
+            height: 40%;
+            width: 70%;
+            border-radius: 100%;
+            opacity: 0;
+            box-shadow: 0px 30px 50px 30px rgba(40, 128, 185, .5);
+        }
+    }
+    
+}
